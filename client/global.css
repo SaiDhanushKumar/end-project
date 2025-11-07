@@ -1,0 +1,125 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+  */
+  :root {
+    /* Brand: Tribal Handicrafts - warm, earthy, handcrafted */
+    --background: 28 40% 98%; /* light cream */
+    --foreground: 26 18% 8%; /* dark coffee */
+
+    --card: 28 35% 100%;
+    --card-foreground: 26 18% 8%;
+
+    --popover: 28 35% 100%;
+    --popover-foreground: 26 18% 8%;
+
+    --primary: 14 65% 45%; /* terracotta */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 80% 45%; /* mustard */
+    --secondary-foreground: 210 30% 8%;
+
+    --muted: 34 20% 90%; /* soft tan */
+    --muted-foreground: 26 10% 30%;
+
+    --accent: 174 45% 32%; /* deep teal */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 14 65% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 28 40% 96%;
+    --sidebar-foreground: 26 18% 8%;
+
+    --sidebar-primary: 14 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 174 45% 32%;
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 30 12% 88%;
+    --sidebar-ring: 14 65% 45%;
+  }
+
+  .dark {
+    --background: 210 18% 10%;
+    --foreground: 210 6% 96%;
+
+    --card: 210 18% 12%;
+    --card-foreground: 210 6% 96%;
+
+    --primary: 14 65% 60%;
+    --primary-foreground: 210 6% 10%;
+
+    --secondary: 42 80% 45%;
+    --secondary-foreground: 210 6% 10%;
+
+    --muted: 210 8% 12%;
+    --muted-foreground: 210 6% 86%;
+
+    --accent: 174 45% 50%;
+    --accent-foreground: 210 6% 10%;
+
+    --border: 210 8% 18%;
+    --input: 210 8% 18%;
+    --ring: 174 45% 50%;
+
+    --sidebar-background: 210 18% 12%;
+    --sidebar-foreground: 210 6% 96%;
+    --sidebar-primary: 14 65% 60%;
+    --sidebar-primary-foreground: 210 6% 96%;
+    --sidebar-accent: 174 45% 40%;
+    --sidebar-accent-foreground: 210 6% 96%;
+    --sidebar-border: 210 8% 18%;
+    --sidebar-ring: 174 45% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", Inter, serif;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Utility: soft container shadow for cards */
+  .card-shadow {
+    box-shadow: 0 6px 20px rgba(20, 20, 18, 0.06);
+  }
+}
